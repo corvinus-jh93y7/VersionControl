@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace UserMaintence
             label1.Text = Resource1.LastName; 
              
             button1.Text = Resource1.Add;
+            button2.Text = Resource1.Intofile;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -35,6 +37,22 @@ namespace UserMaintence
                 
             };
             users.Add(u);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    myStream.Write(listBox1.Items);
+                    
+                    myStream.Close();
+                }
+            }
+
         }
     }
 }
