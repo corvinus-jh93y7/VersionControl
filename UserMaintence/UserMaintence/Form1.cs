@@ -47,12 +47,19 @@ namespace UserMaintence
             {
                 if ((myStream = saveFileDialog1.OpenFile()) != null)
                 {
-                    myStream.Write(listBox1.Items);
+                   // myStream.Write(listBox1.Items);
                     
                     myStream.Close();
                 }
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int s;
+            s = listBox1.SelectedIndex;
+            listBox1.Items.Remove(s);
         }
     }
 }
