@@ -61,7 +61,7 @@ namespace UserMaintence {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hozzáadás.
+        ///   Looks up a localized string similar to &amp;Hozzáadás.
         /// </summary>
         internal static string Add {
             get {
@@ -70,16 +70,16 @@ namespace UserMaintence {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utónév.
+        ///   Looks up a localized string similar to &amp;Fájlbaírás.
         /// </summary>
-        internal static string FirstName {
+        internal static string Intofile {
             get {
-                return ResourceManager.GetString("FirstName", resourceCulture);
+                return ResourceManager.GetString("Intofile", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vezetéknév.
+        ///   Looks up a localized string similar to &amp;Vezetéknév.
         /// </summary>
         internal static string LastName {
             get {
