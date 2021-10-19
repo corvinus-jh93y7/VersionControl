@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using value_at_risk.Entities;
 
 namespace value_at_risk
 {
@@ -14,12 +15,24 @@ namespace value_at_risk
     {
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
+        List<PortfolioItem> Portfolio;
         public Form1()
         {
             InitializeComponent();
             
             Ticks = context.Tick.ToList();
             dataGridView1.DataSource = Ticks;
+            CreatePortfolio();
+        }
+
+        void CreatePortfolio()
+        {
+            Portfolio.Add(new PortfolioItem() { Index = "OTP", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "ZWACK", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "ELMU", Volume = 10 });
+
+            dataGridView2.DataSource = Portfolio;
+
         }
     }
 }
